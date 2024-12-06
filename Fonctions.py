@@ -270,3 +270,122 @@ def est_bissextile(annee):
             return False
         return True
     return False
+
+def tableau_de_choix(QVR_pRpP, QVA):
+    n_poulets_P1 = QVR_pRpP["P1"]["n_poulets_de_chair"]
+    n_poulesP_P1 = QVR_pRpP["P1"]["n_poules_pondeuses"]
+    n_dindons_P1 = QVR_pRpP["P1"]["n_dindons"]
+
+    n_poulets_P2 = QVR_pRpP["P2"]["n_poulets_de_chair"]
+    n_poulesP_P2 = QVR_pRpP["P2"]["n_poules_pondeuses"]
+    n_dindons_P2 = QVR_pRpP["P2"]["n_dindons"]
+
+    n_poulets_P3 = QVR_pRpP["P3"]["n_poulets_de_chair"]
+    n_poulesP_P3 = QVR_pRpP["P3"]["n_poules_pondeuses"]
+    n_dindons_P3 = QVR_pRpP["P3"]["n_dindons"]
+
+    n_poulets_P4 = QVR_pRpP["P4"]["n_poulets_de_chair"]
+    n_poulesP_P4 = QVR_pRpP["P4"]["n_poules_pondeuses"]
+    n_dindons_P4 = QVR_pRpP["P4"]["n_dindons"]
+
+    prix_sacs_P1 = (1.25 * (9 * (n_poulets_P1 * 1))) + (3 * (9 * (n_dindons_P1 * 1))) + (3 * (n_poulesP_P1 * (1/3)))
+    prix_sacs_P2 = (1.25 * (9 * (n_poulets_P2 * 1))) + (3 * (9 * (n_dindons_P2 * 1))) + (3 * (n_poulesP_P2 * (1/3)))
+    prix_sacs_P3 = (1.25 * (9 * (n_poulets_P3 * 1))) + (3 * (9 * (n_dindons_P3 * 1))) + (3 * (n_poulesP_P3 * (1/3)))
+    prix_sacs_P4 = (1.25 * (9 * (n_poulets_P4 * 1))) + (3 * (9 * (n_dindons_P4 * 1))) + (3 * (n_poulesP_P4 * (1/3)))
+
+    entree_1 = int(input("Sélectionnez ce que vous voulez accéder:"
+    "\n - 1. Informations sur les poulets, les dindons et les poules pondeuses à travers des semaines (1):"
+    "\n - 2. Quantité de rip (litière) à travers des semaines (2):"
+    "\n - 3. Prix (dépendamment de la période) de la rip (litière) (3):"
+    "\n - 4. Informations sur les oeufs (4):"
+    "\n entrez la valeur ici:"))
+    print("*" * 100)
+
+    if entree_1 == 1:
+        entree_2 = int(input("Sélectionnez ce que vous voulez accéder:"
+        "\n - 1. Quantité pendant 0 à 4 semaines (1):"
+        "\n - 2. Quantité pendant 4 à 8 semaines (2):"
+        "\n - 3. Quantité pendant 8 à 10 semaines (3):"
+        "\n - 4. Quantité pendant 10 à 14 semaines (4):"
+        "\n - 5. Prix total payé pour les volailles (5):"
+        "\n entrez la valeur ici:"))
+        print("*" * 100)
+
+        if entree_2 == 1:
+            print("La quantité de poulets de chair est de",n_poulets_P1,
+            "\nde dindons de chair est de", n_dindons_P1,
+            "\net de poules pondeuses est de", n_poulesP_P1)
+        elif entree_2 == 2:
+            print("La quantité de poulets de chair est de",int(n_poulets_P2),
+            "\nde dindons de chair est de", n_dindons_P2,
+            "\net de poules pondeuses est de", n_poulesP_P2)
+        elif entree_2 == 3:
+            print("La quantité de poulets de chair est de",int(n_poulets_P3),
+            "\nde dindons de chair est de", n_dindons_P3,
+            "\net de poules pondeuses est de", n_poulesP_P3)
+        elif entree_2 == 4:
+            print("La quantité de poulets de chair est de",n_poulets_P4,
+            "\nde dindons de chair est de", n_dindons_P4,
+            "\net de poules pondeuses est de", n_poulesP_P4)
+        elif entree_2 == 4:
+            print("Le prix total payé pour les volailles est de",trouver_PVA(QVA),"$")
+
+    elif entree_1 == 2:
+        entree_2 = int(input("Sélectionnez ce que vous voulez accéder:"
+        "\n - 1. Quantité pendant 0 à 4 semaines (1):"
+        "\n - 2. Quantité pendant 4 à 8 semaines (2):"
+        "\n - 3. Quantité pendant 8 à 10 semaines (3):"
+        "\n - 4. Quantité pendant 10 à 14 semaines (4):"
+        "\n entrez la valeur ici:"))
+        print("*" * 100)
+
+        if entree_2 == 1:
+            resultat1 = (9 * (n_poulets_P1 * 1)) + (9 * (n_dindons_P1 * 1)) + (n_poulesP_P1 * (1/3))
+            if resultat1 % 1 != 0:
+                resultat1 = int(resultat1) + 1
+            print("La quantité de rip pendant 0 à 4 semaines est de", resultat1)
+        elif entree_2 == 2:
+            resultat2 = (9 * (n_poulets_P2 * 1)) + (9 * (n_dindons_P2 * 1)) + (n_poulesP_P2 * (1/3))
+            if resultat2 % 1 != 0:
+                resultat2 = int(resultat2) + 1
+            print("La quantité de rip pendant 4 à 8 semaines est de", resultat2)
+        elif entree_2 == 3:
+            resultat3 = (9 * (n_poulets_P3 * 1)) + (9 * (n_dindons_P3 * 1)) + (n_poulesP_P3 * (1/3))
+            if resultat3 % 1 != 0:
+                resultat3 = int(resultat3) + 1
+            print("La quantité de poulets de chair est de", resultat3)
+        elif entree_2 == 4:
+            resultat4 = (9 * (n_poulets_P4 * 1)) + (9 * (n_dindons_P4 * 1)) + (n_poulesP_P4 * (1/3))
+            if resultat4 % 1 != 0:
+                resultat4 = int(resultat4) + 1
+            print("La quantité de poulets de chair est de",n_poulets_P4, resultat4)
+
+    elif entree_1 == 3:
+        entree_2 = int(input("Sélectionnez ce que vous voulez accéder:"
+        "\n - 1. Prix à la fin de la 4ième semaine (1):"
+        "\n - 2. Prix à la fin de la 8ième semaine (2):"
+        "\n - 3. Prix à la fin de la 10ième semaine (3):"
+        "\n - 4. Prix à la fin de la 14ième semaine (4):"
+        "\n - 5. Prix total de la rip (litière) (5):"
+        "\n entrez la valeur ici:"))
+        print("*" * 100)
+
+        if entree_2 == 1:
+            print("Le prix à la fin de la 4ième semaine est de,", prix_sacs_P1,"$")
+        elif entree_2 == 2:
+            print("Le prix à la fin de la 8ième semaine est de,", prix_sacs_P2, "$")
+        elif entree_2 == 3:
+            print("Le prix à la fin de la 10ième semaine est de,", prix_sacs_P3, "$")
+        elif entree_2 == 4:
+            print("Le prix à la fin de la 14ième semaine est de,", prix_sacs_P4, "$")
+        elif entree_2 == 5:
+            print("Le prix total de la rip (litière) est de,",calcul_rip(QVR_pRpP),"$")
+
+    elif entree_1 == 4:
+        entree_2 = int(input("Sélectionnez ce que vous voulez accéder:"
+        "\n - 1. Quantité d'oeufs pondus pendant la première année (1):"
+        "\n - 2. Quantité d'oeufs pondus pendant la deuxième année (2):"
+        "\n - 3. Quantité total d'oeufs (3):"
+        "\n - 4. Prix total des oeufs (4):"
+        "\n entrez la valeur ici:"))
+        print("*" * 100)

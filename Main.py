@@ -55,4 +55,4 @@ print(f'PMC_pTM: {C(PMC_pTM)}')
 
 print(calcul_rip(QVR_pRpP))
 
-print(oeufs_pondus(QVA))
+tableau_de_choix(QVR_pRpP, QVA)
