@@ -1,0 +1,4 @@
+Inputed donnes:
+    - n poulets de chairs
+    - n poules pondeuse
+    - n dindons de chair
