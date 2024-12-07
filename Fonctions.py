@@ -1,7 +1,6 @@
 # acronymes
     # QVA: Quantité de Volaille Achetée
 
-
 # fonctions
 def verification(QVA):
     poulets_de_chair = QVA["poulets_de_chair"]
@@ -42,7 +41,6 @@ def verification(QVA):
 
     return passed
 
-
 # trouver QVA
 def trouver_QVA ():
 
@@ -60,7 +58,6 @@ def trouver_QVA ():
 
     return QVA
 
-
 # trouver PVA
 def trouver_PVA(QVA):
 
@@ -75,7 +72,6 @@ def trouver_PVA(QVA):
     total = prix_poulets_de_chair + prix_poules_pondeuses + prix_dindons
 
     return total
-
 
 # trouver QVR_pRpP
 def trouver_QVR_pRpP(QVA):
@@ -184,7 +180,6 @@ def trouver_QSMC_pTM(QMC_pTM):
     }
     return QSMC_pTM
 
-
 # trouver PMC_pTM
 def trouver_PMC_pTM(QSMC_pTM):
     PMC_pTM = {
@@ -242,9 +237,6 @@ def calcul_rip(QVR_pRpP):
 
     prix_T = prix_sacs_P3 + prix_sacs_P2 + prix_sacs_P4 + prix_sacs_P1
     return prix_T
-
-def calcul_total():
-    print("A")
 
 def jours_par_annee(annee):
     return 366 if est_bissextile(annee) else 365
@@ -337,7 +329,6 @@ def calcul_dernier_jour_elevage_poulets(jour_achat, mois_achat, poulets_de_chair
             jours_dans_mai = 31
 
     return f"{jour_fin:02d}-{mois_fin:02d}-{annee}"
-
 
 def calcul_dernier_jour_elevage_dindons(jour_achat, mois_achat):
     """
@@ -591,13 +582,15 @@ def tableau_de_choix(QVR_pRpP, QVA, PVA, PMC_Total, PrixRip, oeufs_pondus):
 
         elif entree_1 == 8:
             print("Merci de votre visite!")
-            break  # Exit the loop and end the program
+            break  # Sortir de la loop et terminer le programme
 
         else:
             print("Option non valide. Veuillez entrer un choix valide.")
 
-            # Ask the user if they want to continue
+            # Demander à l'utilisateur si il veut continuer
         continue_choice = input("\nVoulez-vous continuer? (oui/non): ").lower()
+        print("*" * 100)
+
         if continue_choice != 'oui':
             print("Merci de votre visite!")
-            break  # Exit the loop if the user does not want to continue
+            break  # sortir de la loop si l'utilisateur ne veut pas continuer
