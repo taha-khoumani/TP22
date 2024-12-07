@@ -15,14 +15,6 @@ from Fonctions import *
 
 # QVA: Quantité de Volaille Achetée
     #QVA = trouver_QVA()
-QVA = {
-    'poulets_de_chair':36,
-    'poules_pondeuses': 25,
-    'dindons': 15,
-    'annee_actuelle': 2024
-}
-print(f'QVA: {C(QVA)}')
-
 
 # PVA: Prix des Volaille Achetée
 PVA = trouver_PVA(QVA)
@@ -52,7 +44,17 @@ PMC_pTM = trouver_PMC_pTM(QSMC_pTM)
 print(f'PMC_pTM: {C(PMC_pTM)}')
 
 # PMC-Total: Prix de Moulée Consommé Total
+PMC_Total = trouver_PMC_Total(PMC_pTM)
+print(f'\nPrix de Moulée Total: {C(PMC_Total)}')
 
-print(calcul_rip(QVR_pRpP))
+# PrixRip
+PrixRip = calcul_rip(QVR_pRpP)
+print(f'\nPrixRip: {PrixRip}')
 
-tableau_de_choix(QVR_pRpP, QVA)
+# Frais Initiales d'investisement
+FII = PVA + PMC_Total + PrixRip
+print(f"\nFrais Initiale d'Investissement: {FII}")
+
+oeufs_pondus(QVA)
+
+tableau_de_choix(QVR_pRpP, QVA, PVA, PMC_Total, PrixRip, oeufs_pondus(QVA))
